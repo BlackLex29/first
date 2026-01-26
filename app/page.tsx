@@ -92,7 +92,7 @@ export default function ValentineInvitation() {
       isSpecial: false
     },
     {
-      image: "/ stress.jpg",
+      image: "/stress.jpg",
       title: "Thesis Month",
       description: "In the middle of stress, we found comfort in simple moments.",
       isSpecial: false
