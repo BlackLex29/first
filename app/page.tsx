@@ -92,7 +92,7 @@ export default function ValentineInvitation() {
       isSpecial: false
     },
     {
-      image: "/stress.jpg",
+      image: "/ stress.jpg",
       title: "Thesis Month",
       description: "In the middle of stress, we found comfort in simple moments.",
       isSpecial: false
@@ -512,7 +512,7 @@ export default function ValentineInvitation() {
                   <div className="space-y-4 text-gray-700 text-sm leading-relaxed text-center">
                     <div className="bg-gradient-to-r from-pink-50 to-rose-50 rounded-xl p-5 border border-pink-200/50">
                       <p className="mb-4 italic text-base text-rose-600">
-                        "After 20 beautiful memories, my heart is overflowing with love for you..."
+                        "After beautiful memories, my heart is overflowing with love for you..."
                       </p>
                       
                       <div className="space-y-3">
