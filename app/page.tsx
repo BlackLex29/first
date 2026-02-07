@@ -57,7 +57,7 @@ export default function ValentineInvitation() {
     },
     {
       image: "/3.jpg",
-      title: " Moa Day",
+      title: "Moa Day",
       description: "Sun, sand, and your beautiful smile ✨",
       isSpecial: false
     },
@@ -87,7 +87,7 @@ export default function ValentineInvitation() {
     },
     {
       image: "/SM.jpg",
-      title: "SM date",
+      title: "SM Date",
       description: "A simple date at SM—walking hand in hand, sharing laughs, and turning an ordinary day into something special.",
       isSpecial: false
     },
@@ -105,7 +105,7 @@ export default function ValentineInvitation() {
     },
     {
       image: "/foodtrip.jpg",
-      title: " Food Trips",
+      title: "Food Trips",
       description: "Our kind of date: eating, laughing, and making memories.",
       isSpecial: false
     },
@@ -115,7 +115,7 @@ export default function ValentineInvitation() {
       title: "Our Special Number ✨",
       description: "12 will always mean the world to us",
       isSpecial: true,
-      specialMessage: "Happy First Anniversary, my love! Twelve will forever be our special number—a symbol of all the memories, laughter, and love we’ve shared. Every moment with you feels like pure magic, and my love for you grows deeper with every day. I love you more than words could ever express."
+      specialMessage: "Happy First Anniversary, my love! Twelve will forever be our special number—a symbol of all the memories, laughter, and love we've shared. Every moment with you feels like pure magic, and my love for you grows deeper with every day. I love you more than words could ever express."
     },
     {
       image: "/review.jpg",
@@ -129,7 +129,6 @@ export default function ValentineInvitation() {
       description: "After class means freedom, coffee, and smiles with you.",
       isSpecial: false
     },
-    
   ];
 
   // Smooth navigation functions
@@ -245,7 +244,7 @@ export default function ValentineInvitation() {
           setTransitionDirection('next');
           setCurrentPhotoIndex((prev) => prev + 1);
         }
-      }, 100000);
+      }, 8000);
       return () => clearInterval(interval);
     }
   }, [isPlaying, response, showInvitation, showSpecialMessage, currentPhotoIndex]);
@@ -377,8 +376,6 @@ export default function ValentineInvitation() {
                 </div>
                 
                 <p className="text-gray-600 text-sm text-center mb-4 leading-relaxed">
-                  
-                  <br />
                   Say YES and let our love story unfold with music 🎵
                 </p>
               </div>
@@ -406,91 +403,68 @@ export default function ValentineInvitation() {
             </div>
           </div>
         ) : response === 'yes' && showInvitation ? (
-          /* INVITATION PAGE - Mobile Optimized */
-          <div className="bg-gradient-to-br from-pink-50 via-white to-rose-50 rounded-2xl shadow-lg p-5 border border-pink-200 animate-fadeInUp">
-            <div className="space-y-6">
-              {/* Header */}
-              <div className="text-center">
-                <h2 className="text-xl font-bold bg-gradient-to-r from-rose-600 via-pink-600 to-rose-600 bg-clip-text text-transparent mb-3">
-                  You Said YES! 💝
-                </h2>
-                <div className="h-1 w-32 bg-gradient-to-r from-pink-400 to-rose-400 rounded-full mx-auto"></div>
+          /* INVITATION JPG PAGE - Full Screen Display */
+          <div className="w-full animate-fadeIn">
+            {/* Header - Simplified */}
+            <div className="text-center mb-4">
+              <h2 className="text-xl font-bold bg-gradient-to-r from-rose-600 via-pink-600 to-rose-600 bg-clip-text text-transparent">
+                Your Invitation 💝
+              </h2>
+              <p className="text-gray-600 text-xs mt-1">
+                Scroll down to continue
+              </p>
+            </div>
+
+            {/* JPG Invitation - Full Width */}
+            <div className="relative w-full">
+              <div className="absolute -inset-2 bg-gradient-to-r from-pink-400/20 to-rose-400/20 rounded-2xl blur-md"></div>
+              
+              {/* Main Image Container - Full Width */}
+              <div className="relative bg-white rounded-xl shadow-lg overflow-hidden border border-pink-200">
+                {/* PALITAN MO ITO NG ACTUAL PATH NG JPG MO */}
+                <img
+                  src="/valen.png"
+                  alt="Valentine's Invitation"
+                  className="w-full h-auto object-cover"
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    display: 'block'
+                  }}
+                  onError={(e) => {
+                    // Fallback kung walang image
+                    const parent = e.currentTarget.parentElement;
+                    if (parent) {
+                      parent.innerHTML = `
+                        <div class="flex flex-col items-center justify-center p-8 min-h-[400px] bg-gradient-to-br from-pink-50 to-rose-50">
+                          <div class="text-5xl mb-4">💌</div>
+                          <h3 class="text-lg font-bold text-gray-800 mb-2">Invitation Not Found</h3>
+                          <p class="text-gray-600 text-sm text-center">Please check if valen.png exists in the public folder</p>
+                        </div>
+                      `;
+                    }
+                  }}
+                />
               </div>
-
-              {/* Invitation Card - Mobile */}
-              <div className="relative">
-                <div className="absolute -inset-3 bg-gradient-to-r from-pink-300/10 to-rose-300/10 rounded-2xl blur-md"></div>
-                <div className="relative bg-gradient-to-br from-white to-pink-50 rounded-xl p-5 border border-pink-200 shadow-md">
-                  <div className="text-center space-y-4">
-                    <div className="space-y-1">
-                      <h3 className="text-lg font-bold text-gray-800">
-                        Valentine's Date Invitation
-                      </h3>
-                      <p className="text-pink-600 text-sm">Join me for a special day of love and memories 💕</p>
-                    </div>
-
-                    {/* Details - Mobile Layout */}
-                    <div className="space-y-4 my-4">
-                      {/* Date */}
-                      <div className="space-y-2">
-                        <div className="w-10 h-10 bg-gradient-to-br from-pink-500 to-rose-500 rounded-full flex items-center justify-center mx-auto">
-                          <span className="text-lg text-white">📅</span>
-                        </div>
-                        <div>
-                          <h4 className="font-bold text-gray-700 text-sm">Date</h4>
-                          <p className="text-gray-600 text-xs">February 14, 2025</p>
-                          <p className="text-pink-600 font-medium text-xs">Thursday</p>
-                        </div>
-                      </div>
-
-                      {/* Time */}
-                      <div className="space-y-2">
-                        <div className="w-10 h-10 bg-gradient-to-br from-pink-500 to-rose-500 rounded-full flex items-center justify-center mx-auto">
-                          <span className="text-lg text-white">🕒</span>
-                        </div>
-                        <div>
-                          <h4 className="font-bold text-gray-700 text-sm">Time</h4>
-                          <p className="text-gray-600 text-xs">10:AM onwards</p>
-                          <p className="text-pink-600 font-medium text-xs">Golden Hour</p>
-                        </div>
-                      </div>
-
-                      {/* Place */}
-                      <div className="space-y-2">
-                        <div className="w-10 h-10 bg-gradient-to-br from-pink-500 to-rose-500 rounded-full flex items-center justify-center mx-auto">
-                          <span className="text-lg text-white">📍</span>
-                        </div>
-                        <div>
-                          <h4 className="font-bold text-gray-700 text-sm">Place</h4>
-                          <p className="text-gray-600 text-xs">Vintro Restaurent</p>
-                          <p className="text-pink-600 font-medium text-xs">Lipa City</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Special Message */}
-                    <div className="bg-gradient-to-r from-pink-50 to-rose-50 rounded-lg p-4 border border-pink-100">
-                      <p className="text-gray-700 text-sm italic">
-                        "I've prepared something special for us. 
-                        <span className="block mt-1 text-pink-600 font-medium">
-                          Dress code: Something that makes you feel beautiful
-                        </span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
+              
+              {/* Next Button - Fixed at Bottom */}
+              <div className="sticky bottom-4 mt-6">
+                <button
+                  onClick={showNextButton}
+                  className="w-full py-3 bg-gradient-to-r from-rose-500 via-pink-500 to-rose-500 hover:from-rose-600 hover:via-pink-600 hover:to-rose-600 active:scale-95 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 touch-manipulation"
+                  style={{ touchAction: 'manipulation' }}
+                >
+                  <span className="flex items-center justify-center gap-2 text-sm">
+                    View Our Memories
+                    <span className="text-lg">→</span>
+                  </span>
+                </button>
+                
+                {/* Hint Text */}
+                <p className="text-center text-xs text-gray-500 mt-3">
+                  View our journey together with photos and memories
+                </p>
               </div>
-
-              {/* Next Button - Mobile */}
-              <button
-                onClick={showNextButton}
-                className="w-full py-3 bg-gradient-to-r from-rose-500 via-pink-500 to-rose-500 active:from-rose-600 active:via-pink-600 active:to-rose-600 text-white font-bold rounded-xl shadow-lg active:shadow-xl transition-all duration-200 active:scale-95 touch-manipulation"
-                style={{ touchAction: 'manipulation' }}
-              >
-                <span className="flex items-center justify-center gap-1 text-sm">
-                  Next 
-                </span>
-              </button>
             </div>
           </div>
         ) : showSpecialMessage ? (
@@ -503,7 +477,7 @@ export default function ValentineInvitation() {
                 <div className="space-y-6">
                   <div className="text-center">
                     <h3 className="text-xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 bg-clip-text text-transparent mb-3">
-                      My  Message For You
+                      My Message For You
                     </h3>
                     <div className="h-1 w-32 bg-gradient-to-r from-purple-400 via-pink-400 to-rose-400 rounded-full mx-auto"></div>
                   </div>
@@ -546,7 +520,7 @@ export default function ValentineInvitation() {
             {/* Back Button - Mobile */}
             <button
               onClick={goBackToPhotos}
-              className="w-full py-3 bg-gradient-to-r from-pink-500 to-rose-500 active:from-pink-600 active:to-rose-600 text-white font-bold rounded-xl shadow-lg active:shadow-xl transition-all duration-200 active:scale-95 touch-manipulation"
+              className="w-full py-3 bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 active:scale-95 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 touch-manipulation"
               style={{ touchAction: 'manipulation' }}
             >
               ← Back to Our Memories
@@ -558,7 +532,7 @@ export default function ValentineInvitation() {
             {/* Swipe Instructions for Mobile */}
             <div className="text-center">
               <p className="text-gray-600 text-xs">
-                
+                Swipe left/right or use buttons to navigate
               </p>
             </div>
 
@@ -596,29 +570,29 @@ export default function ValentineInvitation() {
                       </div>
                     </div>
                   ) : (
-                    // NORMAL PHOTOS - Mobile Optimized
+                    // NORMAL PHOTOS - BIGGER DISPLAY
                     <div className="relative">
-                      <div className="relative h-[250px] overflow-hidden bg-gray-100 touch-pan-y"
+                      <div className="relative h-[400px] overflow-hidden bg-gradient-to-br from-pink-100 to-rose-100 touch-pan-y flex items-center justify-center"
                         style={{ touchAction: 'pan-y' }}
                       >
-                        {/* Main Image Container - Mobile Optimized */}
-                        <div className="absolute inset-0 flex items-center justify-center">
+                        {/* Main Image Container - Larger with proper scaling */}
+                        <div className="w-full h-full flex items-center justify-center p-2">
                           <img
                             src={memories[currentPhotoIndex].image}
                             alt={memories[currentPhotoIndex].title}
-                            className="max-w-full max-h-full w-auto h-auto object-contain"
+                            className="w-full h-full object-contain"
                             style={{
+                              width: '100%',
+                              height: '100%',
                               maxWidth: '100%',
                               maxHeight: '100%',
-                              width: 'auto',
-                              height: 'auto',
                               objectFit: 'contain' as const
                             }}
                             loading="lazy"
+                            onError={(e) => {
+                              e.currentTarget.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23f472b6'/%3E%3Ctext x='200' y='200' font-family='Arial' font-size='24' fill='white' text-anchor='middle' dy='.3em'%3EMemory Photo%3C/text%3E%3C/svg%3E";
+                            }}
                           />
-                          
-                          {/* Subtle gradient overlay */}
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-black/5 to-transparent"></div>
                         </div>
                       </div>
                     </div>
@@ -692,7 +666,7 @@ export default function ValentineInvitation() {
                         className={`flex items-center justify-center gap-2 px-4 py-3 rounded-lg transition-all duration-200 font-medium flex-1 ${
                           currentPhotoIndex === 0
                             ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                            : 'bg-gradient-to-r from-pink-500 to-rose-500 text-white active:from-pink-600 active:to-rose-600 active:scale-95 shadow-md active:shadow-lg'
+                            : 'bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 active:scale-95 text-white shadow-md hover:shadow-lg'
                         } touch-manipulation`}
                         style={{ touchAction: 'manipulation' }}
                       >
@@ -704,7 +678,7 @@ export default function ValentineInvitation() {
                       {currentPhotoIndex === memories.length - 1 ? (
                         <button
                           onClick={nextPhoto}
-                          className="flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-purple-500 via-pink-500 to-rose-500 text-white rounded-lg active:scale-95 transition-all duration-200 font-medium flex-1 shadow-md active:shadow-lg touch-manipulation"
+                          className="flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-purple-500 via-pink-500 to-rose-500 hover:from-purple-600 hover:via-pink-600 hover:to-rose-600 active:scale-95 text-white rounded-lg transition-all duration-200 font-medium flex-1 shadow-md hover:shadow-lg touch-manipulation"
                           style={{ touchAction: 'manipulation' }}
                         >
                           <span className="text-sm">Final Message</span>
@@ -713,7 +687,7 @@ export default function ValentineInvitation() {
                       ) : (
                         <button
                           onClick={nextPhoto}
-                          className="flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-rose-500 to-pink-500 text-white rounded-lg active:from-rose-600 active:to-pink-600 active:scale-95 transition-all duration-200 font-medium flex-1 shadow-md active:shadow-lg touch-manipulation"
+                          className="flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 active:scale-95 text-white rounded-lg transition-all duration-200 font-medium flex-1 shadow-md hover:shadow-lg touch-manipulation"
                           style={{ touchAction: 'manipulation' }}
                         >
                           <span className="text-sm">Next</span>
@@ -774,7 +748,7 @@ export default function ValentineInvitation() {
                 }
               }
             }}
-            className="w-12 h-12 bg-gradient-to-br from-white to-pink-50 rounded-full shadow-lg border border-pink-200/50 flex items-center justify-center active:scale-95 transition-all duration-200 touch-manipulation"
+            className="w-12 h-12 bg-gradient-to-br from-white to-pink-50 rounded-full shadow-lg border border-pink-200/50 flex items-center justify-center hover:scale-105 active:scale-95 transition-all duration-200 touch-manipulation"
             style={{ touchAction: 'manipulation' }}
           >
             <div className={`text-xl ${isPlaying ? 'text-pink-600' : 'text-gray-400'}`}>
