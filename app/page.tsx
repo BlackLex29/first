@@ -46,43 +46,43 @@ export default function ValentineInvitation() {
     {
       image: "/start.jpg",
       title: "The Beginning",
-      description: "Where our beautiful story started 💕",
+      description: " Where our beautiful story began, I was still so shy around you back then my heart racing every time you were near. I ate slowly on purpose, just so I could stay beside you a little longer. In those quiet, simple moments, I didnt know it yet, but I was already falling for you. 💗",
       isSpecial: false
     },
     {
       image: "/1.jpg",
       title: "First Manila Date",
-      description: "Our first adventure in the city 🌟",
+      description: "Our first adventure in the city, I was nervous back then, afraid we might get lost, but every moment felt so exciting. I didnt feel tired at all being with you made everything feel light, easy, and unforgettable.",
       isSpecial: false
     },
     {
       image: "/3.jpg",
       title: "Moa Day",
-      description: "Sun, sand, and your beautiful smile ✨",
+      description: "Sun, sand, and your beautiful smile,  I could clearly see the happiness in your eyes at that moment, and my heart felt so full just watching you smile. Seeing you happy like that was the most beautiful sight because you were, and always will be, incredibly beautiful",
       isSpecial: false
     },
     {
       image: "/4.jpg",
       title: "Coffee Moments",
-      description: "Simple dates, deep conversations 🌹",
+      description: "Simple dates, deep conversations, No fancy plans, just us talking about everything and nothing at the same time. In those quiet moments, I felt closer to you, realizing that the simplest dates and the deepest conversations with you are the ones I cherish the most.",
       isSpecial: false
     },
     {
       image: "/5.jpg",
       title: "Low Blood Days",
-      description: "Even the rain couldn't dampen our joy ☔",
+      description: "I still remember that day so clearly when I had my blood taken and I was feeling so nervous. But you were right there, staying by my side, helping me stay calm. Your presence alone was enough to make everything feel okay, and that meant more to me than youll ever know. ☔",
       isSpecial: false
     },
     {
       image: "/6.jpg",
       title: "SB Fun",
-      description: "Celebrating life together 🎉",
+      description: "Celebrating life together, Back then, we always felt so blessed treating ourselves, spending time at Starbucks, and simply enjoying life side by side. Those moments of laughter, little rewards, and togetherness made everything feel complete.",
       isSpecial: false
     },
     {
       image: "/makeup.jpg",
       title: "Makeup Session",
-      description: "Beauty Touched by Love",
+      description: "Beauty Touched by Love, In every smile and quiet glance, love leaves its gentle mark.",
       isSpecial: false
     },
     {
@@ -94,7 +94,7 @@ export default function ValentineInvitation() {
     {
       image: "/stress.jpg",
       title: "Thesis Month",
-      description: "In the middle of stress, we found comfort in simple moments.",
+      description: "In the middle of stress, we found comfort in simple moments, We were both busy with our research, tired and overwhelmed, yet we still made it through—defended and stronger together. Even in the pressure, we found peace in each other.",
       isSpecial: false
     },
     {
@@ -115,7 +115,7 @@ export default function ValentineInvitation() {
       title: "Our Special Number ✨",
       description: "12 will always mean the world to us",
       isSpecial: true,
-      specialMessage: "Happy First Anniversary, my love! Twelve will forever be our special number—a symbol of all the memories, laughter, and love we've shared. Every moment with you feels like pure magic, and my love for you grows deeper with every day. I love you more than words could ever express."
+      specialMessage: "With you, I found my peace. Before you, I didn’t realize how calm life could feel, how safe love could make me. In your arms, I discovered who I truly am, my fears, my dreams, my silly quirks, and you accepted all of it. The way you love me is overwhelming in the most beautiful way; I fell for you deeply, and every single day, I find myself loving you even more. You are everything I’ve ever hoped for, every standard, every dream, every little wish, all of it I see in you. We have plans, dreams, and a future that I’m so excited to live with you. I can’t wait for the day I get to call you my wife, to build our life together, to laugh, cry, and grow old with you by my side. You’ve made even the simplest moments, the quiet talks, the shared meals, the laughter over nothing, feel magical and unforgettable. Happy First Anniversary, my love! Twelve will forever be our special number, a symbol of every memory, every laugh, every tear, and every heartbeat we’ve shared. Every moment with you feels like pure magic, and my love for you grows deeper, stronger, and more endless with each passing day. I love you more than words could ever express, more than my heart could ever hold, and more than I ever thought possible. You are my everything, my forever, my love, my home."
     },
     {
       image: "/review.jpg",
@@ -244,7 +244,7 @@ export default function ValentineInvitation() {
           setTransitionDirection('next');
           setCurrentPhotoIndex((prev) => prev + 1);
         }
-      }, 8000);
+      }, 800000);
       return () => clearInterval(interval);
     }
   }, [isPlaying, response, showInvitation, showSpecialMessage, currentPhotoIndex]);
